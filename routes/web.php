@@ -159,7 +159,16 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 //     return "API key is : ".$google_api_config;
 // });
 
-Route::get('google', function () {
-    $google_api_config = config('google.google_api_key');
-    return "API key is : " . $google_api_config;
+// Route::get('google', function () {
+//     $google_api_config = config('google.google_api_key');
+//     return "API key is : " . $google_api_config;
+// });
+
+
+//35
+use Image;
+// usage inside a laravel route
+Route::get('/', function () {
+    $img = Image::make('foo.jpg')->resize(300, 200);
+    return $img->response('jpg');
 });
