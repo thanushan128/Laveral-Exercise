@@ -13,8 +13,13 @@ return new class extends Migration
     {
         Schema::create('user', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50);
+            $table->string('name',255);
             $table->integer('age');
+            $table->string('phone',10);
+            $table->string('password',255);
+            $table->string('address',255);
+            $table->string('city',255);
+            $table->tinyInteger('is_admin')->default(0);
             $table->timestamps();
         });
     }

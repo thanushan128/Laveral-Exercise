@@ -6,6 +6,7 @@ use App\Http\Controllers\MonthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentInsertController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
 use Symfony\Component\Routing\Route as RoutingRoute;
@@ -137,14 +138,17 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 
 
 //26
- Route::get('/', [EmployeeController::class,'create']);
- Route::post('/store', [EmployeeController::class,'store']);
+//  Route::get('/', [EmployeeController::class,'create']);
+//  Route::post('/store', [EmployeeController::class,'store']);
 
 //  27
-Route::get('list',[EmployeeController::class,'list']);
-Route::get('edit/{id}',[EmployeeController::class,'edit']);
-Route::post('update/{id}',[EmployeeController::class,'update']);
-Route::get('delete/{id}',[EmployeeController::class,'delete']);
+// Route::get('list',[EmployeeController::class,'list']);
+// Route::get('edit/{id}',[EmployeeController::class,'edit']);
+// Route::post('update/{id}',[EmployeeController::class,'update']);
+// Route::get('delete/{id}',[EmployeeController::class,'delete']);
 
+// 32
+Route::view('/','form');
+Route::post('user',[UserController::class],'store');
 
 
