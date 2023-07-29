@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentInsertController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
 use Symfony\Component\Routing\Route as RoutingRoute;
@@ -148,7 +149,17 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 // Route::get('delete/{id}',[EmployeeController::class,'delete']);
 
 // 32
-Route::view('/','form');
-Route::post('user',[UserController::class],'store');
+// Route::view('/','form');
+// Route::post('user',[UserController::class],'store');
 
+// 34
+// use Illuminate\Support\Facades\Config;
+// Route::get('google',function(){
+//     $google_api_config = Config::get('google.google_api_key');
+//     return "API key is : ".$google_api_config;
+// });
 
+Route::get('google', function () {
+    $google_api_config = config('google.google_api_key');
+    return "API key is : " . $google_api_config;
+});
