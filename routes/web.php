@@ -2,6 +2,7 @@
 
 use App\Facades\Greet;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MonthController;
@@ -188,5 +189,10 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 // Route::post('/',[ImageUploadController::class,'imageUpload']);
 
 // 38
-Route::get('/',[UserFormController::class,'userForm']);
-Route::post('/', [UserFormController::class, 'createUser']);
+// Route::get('/',[UserFormController::class,'userForm']);
+// Route::post('/', [UserFormController::class, 'createUser']);
+
+//39
+Route::view('/','page');
+Route::get('delete/public',[HomeController::class,'deleteFromPublic']);
+Route::get('delete/storage', [HomeController::class, 'deleteFromStorage']);
