@@ -2,6 +2,7 @@
 
 use App\Facades\Greet;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MonthController;
 use App\Http\Controllers\PostController;
@@ -176,8 +177,12 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 
 
 // 36
-use App\Services\Output\Text\GreetingService;
-Route::get('/',function(){
-    // return GreetingService::getText();
-    return Greet::getcodeText();
-});
+// use App\Services\Output\Text\GreetingService;
+// Route::get('/',function(){
+//     // return GreetingService::getText();
+//     return Greet::getcodeText();
+// });
+
+// 37
+Route::get('/',[ImageUploadController::class,'imageUploadForm']);
+Route::post('/',[ImageUploadController::class,'imageUpload']);
