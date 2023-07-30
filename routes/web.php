@@ -1,5 +1,6 @@
 <?php
 
+use App\Facades\Greet;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MonthController;
@@ -166,9 +167,17 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 
 
 //35
-use Image;
-// usage inside a laravel route
-Route::get('/', function () {
-    $img = Image::make('foo.jpg')->resize(300, 200);
-    return $img->response('jpg');
+// use Image;
+// // usage inside a laravel route
+// Route::get('/', function () {
+//     $img = Image::make('foo.jpg')->resize(300, 200);
+//     return $img->response('jpg');
+// });
+
+
+// 36
+use App\Services\Output\Text\GreetingService;
+Route::get('/',function(){
+    // return GreetingService::getText();
+    return Greet::getcodeText();
 });
