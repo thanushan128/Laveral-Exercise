@@ -193,6 +193,10 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 // Route::post('/', [UserFormController::class, 'createUser']);
 
 //39
-Route::view('/','page');
-Route::get('delete/public',[HomeController::class,'deleteFromPublic']);
-Route::get('delete/storage', [HomeController::class, 'deleteFromStorage']);
+// Route::view('/','page');
+// Route::get('delete/public',[HomeController::class,'deleteFromPublic']);
+// Route::get('delete/storage', [HomeController::class, 'deleteFromStorage']);
+
+
+// 40
+Route::get('/',[HomeController::class, 'listStudent']);
