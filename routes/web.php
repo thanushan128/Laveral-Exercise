@@ -9,7 +9,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentInsertController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\UserFormController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
 use Symfony\Component\Routing\Route as RoutingRoute;
@@ -184,5 +184,9 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 // });
 
 // 37
-Route::get('/',[ImageUploadController::class,'imageUploadForm']);
-Route::post('/',[ImageUploadController::class,'imageUpload']);
+// Route::get('/',[ImageUploadController::class,'imageUploadForm']);
+// Route::post('/',[ImageUploadController::class,'imageUpload']);
+
+// 38
+Route::get('/',[UserFormController::class,'userForm']);
+Route::post('/', [UserFormController::class, 'createUser']);
